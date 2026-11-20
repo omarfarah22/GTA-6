@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Locations - GTA 6 Companion</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Locations</h1>
+    <div class="nav">
+      <a href="/">Home</a> | <a href="/guides">All Guides</a> | <a href="/locations">All Locations</a>
+    </div>
+    {% for l in locations %}
+    <div class="card">
+      <h3>{{ l.name }} - {{ l.type }}</h3>
+      <p><b>Area:</b> {{ l.area }}</p>
+      <p>{{ l.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
