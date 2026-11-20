@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guides - GTA 6 Companion</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>All Guides</h1>
+    <form>
+      <input type="text" name="q" value="{{ q }}" placeholder="Search guides...">
+      <button>Search</button>
+    </form>
+    <div class="nav">
+      <a href="/">Home</a> | <a href="/guides">All Guides</a> | <a href="/locations">All Locations</a>
+    </div>
+    {% for g in guides %}
+    <div class="card">
+      <h3>{{ g.title }}</h3>
+      <p><b>{{ g.money_per_hour }}</b> | {{ g.category }}</p>
+      <p>{{ g.description }}</p>
+      <p>{{ g.steps }}</p>
+    </div>
+    {% endfor %}
+    {% if not guides %}
+      <p>No guides found. Try another word.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
